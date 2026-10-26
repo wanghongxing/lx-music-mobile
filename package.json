@@ -20,7 +20,8 @@
     "clear": "cd android && gradlew.bat clean",
     "clear:full": "git clean -fdx -e android/keystore.properties -e android/app/*.keystore",
     "build:theme": "node src/theme/themes/createThemes.js",
-    "publish": "node publish"
+    "publish": "node publish",
+    "postinstall": "node scripts/prepare-source-dependencies.js"
   },
   "engines": {
     "node": ">= 18",
@@ -55,17 +56,17 @@
     "message2call": "^0.1.3",
     "pako": "^2.1.0",
     "react": "18.2.0",
-    "react-native": "0.73.11",
-    "react-native-background-timer": "github:lyswhut/react-native-background-timer#55ecaa80880e9cec1fff81f3ce10e6250ab3c40c",
+    "react-native": "0.72.17",
+    "react-native-background-timer": "https://codeload.github.com/lyswhut/react-native-background-timer/tar.gz/55ecaa80880e9cec1fff81f3ce10e6250ab3c40c",
     "react-native-exception-handler": "^2.10.10",
-    "react-native-file-system": "github:lyswhut/react-native-file-system#fcb0e6f55af684ac60598c720c77cfe0502f2c65",
+    "react-native-file-system": "https://codeload.github.com/lyswhut/react-native-file-system/tar.gz/fcb0e6f55af684ac60598c720c77cfe0502f2c65",
     "react-native-fs": "^2.20.0",
-    "react-native-local-media-metadata": "github:lyswhut/react-native-local-media-metadata#1b5be310d112afce0df598d3e9c7521c3311049c",
+    "react-native-local-media-metadata": "https://codeload.github.com/lyswhut/react-native-local-media-metadata/tar.gz/1b5be310d112afce0df598d3e9c7521c3311049c",
     "react-native-navigation": "7.39.2",
     "react-native-pager-view": "6.7.1",
     "react-native-quick-base64": "^2.2.2",
     "react-native-quick-md5": "^3.0.9",
-    "react-native-track-player": "github:lyswhut/react-native-track-player#d4a062f76ba3d0c408e0f0827b721cc4bf46dffd",
+    "react-native-track-player": "https://codeload.github.com/lyswhut/react-native-track-player/tar.gz/d4a062f76ba3d0c408e0f0827b721cc4bf46dffd",
     "react-native-vector-icons": "^10.2.0"
   },
   "devDependencies": {
@@ -74,9 +75,7 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@babel/preset-env": "^7.29.0",
     "@babel/runtime": "^7.28.6",
-    "@react-native/babel-preset": "^0.74.89",
-    "@react-native/metro-config": "^0.74.89",
-    "@react-native/typescript-config": "^0.74.89",
+    "@react-native/metro-config": "0.72.12",
     "@tsconfig/react-native": "^3.0.9",
     "@types/he": "^1.2.3",
     "@types/react": "^18.3.27",
@@ -89,7 +88,9 @@
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "metro-react-native-babel-preset": "0.76.9",
+    "@react-native/typescript-config": "^0.74.89"
   },
   "overrides": {
     "@react-native-community/cli-platform-android": {
